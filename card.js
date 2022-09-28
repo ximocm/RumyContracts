@@ -3,8 +3,8 @@ class Card{
         this.number = number;
         this.suit = suit;
 
-        this.height = 23;
-        this.width = 12;
+        this.height = 32;
+        this.width = 35;
     }
     
     draw(ctx){
