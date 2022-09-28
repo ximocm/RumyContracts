@@ -1,6 +1,9 @@
-const canvas = document.getElementById("myCanvas");
+var canvas = document.getElementById("myCanvas");
 canvas.width = 600;
 canvas.height = 600;
 
-const ctx = canvas.getContext("2d");
-const card = new card (1,1);
+var imgdeck = document.getElementById('\images\back.png')
+
+var ctx = canvas.getContext("2d");
+ctx.drawImage(imgdeck, 100, 100)
+const deck = new(deck)

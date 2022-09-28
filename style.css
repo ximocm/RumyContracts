@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
 body{
     margin:5;
     background:darkgray;
@@ -6,4 +8,78 @@ body{
 }
 #myCanvas{
     background:lightgray;
+}
+:root{
+    --background: #524A4E;
+    --white: #FDEFF4;
+    --iconcol: #FF5C8D;
+    --indicatorcol: #FFC0D3;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.navigation{
+    position: relative;
+    width: 300px;
+    height: 80px;
+    background: var(--white) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.navigation ul{
+    display: flex;
+    width: 280px;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--background);
+}
+.navigation ul li a .text
+{
+    position: absolute;
+    background: var(--iconcol);
+    color: var(--white);
+    padding: 2px 5px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.navigation ul li :not(.active):hover .text{
+    opacity: 1;
+    transform: translateY(20px);
+}
+.navigation ul li :not(.active):hover .icon{
+    color: var(--iconcol);
 }
