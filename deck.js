@@ -2,7 +2,7 @@ class Deck{
     constructor(){
         this.deck = [];
         this.reset()//Adds cards to the deck.
-        this.shuffle();
+        this.shuffle();//Shuffle the cards in the deck
     }
     reset(){
         const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
@@ -12,8 +12,10 @@ class Deck{
                 for (let value in values){
                     this.deck.push(card(value,suit));
                 }
-                this.deck.push(card(0,'Joker'));
             }
+        }
+        for(var i; i<6;i++){
+            this.deck.push(card(0,'Joker'));
         }
     }
     shuffle(){
