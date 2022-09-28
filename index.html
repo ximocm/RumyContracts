@@ -5,6 +5,9 @@
 </head>
 <body>
     <canvas id="myCanvas"></canvas>
+    <div style="display:none;">
+        <img id="imgdeck" src="C:\Users\ximoc\Documents\GitHub\RumyContracts\images\back.png" width="25" height="32" />
+    </div>
     <script src="card.js"></script>
     <script src="deck.js"></script>
     <script src="main.js"></script>
@@ -13,17 +16,17 @@
             <ul>
                 <li class="list active">
                     <a href="#">
-                        <span class="icon">
+                        <button id="draw" class="icon">
                             <ion-icon name="add-outline"></ion-icon>
-                        </span>
+                        </button>
                         <span class="text">Draw</span>
                     </a>
                 </li>
                 <li class="list">
                     <a href="#">
-                        <span class="icon">
-                            <ion-icon name="trash-bin-outline"></ion-icon>
-                        </span>
+                        <button class="icon" id = "drawdricards">
+                            <ion-icon name="trash-bin-outline" ></ion-icon>
+                        </button>
                         <span class="text">Draw from Discards</span>
                     </a>
                 </li>

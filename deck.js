@@ -3,6 +3,7 @@ class Deck{
         this.deck = [];
         this.reset()//Adds cards to the deck.
         this.shuffle();//Shuffle the cards in the deck
+        this.draw();
     }
     reset(){
         const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
@@ -26,5 +27,11 @@ class Deck{
             this.deck[i] = this.deck[j];
             this.deck[j] = tmp;
         }
+    }
+    draw(){
+        var carda = deck[this.deck.length -1];
+        this.deck.pop();
+        carda.display(carda);
+        return(carda);
     }
 }
