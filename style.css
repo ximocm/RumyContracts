@@ -15,6 +15,11 @@ body{
     --iconcol: #FF5C8D;
     --indicatorcol: #FFC0D3;
 }
+button{
+    background-color: transparent;
+    border: none !important;
+    padding: 0px 20px;
+}
 .container{
     display: flex;
     justify-content: center;
