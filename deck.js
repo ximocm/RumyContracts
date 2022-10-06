@@ -11,7 +11,8 @@ class Deck{
         for (let _ in 3){
             for (let suit in suits){
                 for (let value in values){
-                    this.deck.push(card(value,suit));
+                    Card = (value,suit);
+                    this.deck.push(card);
                 }
             }
         }
@@ -20,7 +21,7 @@ class Deck{
         }
     }
     shuffle(){
-        let size = this.deck.length();
+        let size = this.deck.length;
         for(var i; i < size; i++){
             let j = Math.floor(Math.random() * numberOfCards);
             let tmp = this.deck[i];
@@ -29,9 +30,9 @@ class Deck{
         }
     }
     draw(){
-        var carda = deck[this.deck.length -1];
+        Card card = this.deck[this.deck.length - 1];
         this.deck.pop();
-        carda.display(carda);
-        return(carda);
+        card.display();
+        return(card);
     }
-}
+};
