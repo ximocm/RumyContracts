@@ -30,7 +30,7 @@ class Deck{
         }
     }
     draw(){
-        Card card = this.deck[this.deck.length - 1];
+        let card = this.deck[this.deck.length - 1];
         this.deck.pop();
         card.display();
         return(card);
