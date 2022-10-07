@@ -9,10 +9,9 @@ var turno = 1;
 
 ctx.fillStyle = "green";
 ctx.fillRect(0,0,canvas.width,canvas.height);
-ctx.drawImage(imgdeck, 325,275,50,64);
+ctx.drawImage(imgdeck, 335,275,50,64);
 
 const deck = new Deck();
-deck.shuffle();
 
 const drw = document.getElementById('draw');
 console.log(drw);

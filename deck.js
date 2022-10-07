@@ -3,15 +3,19 @@ class Deck{
         this.deck = [];
         this.reset()//Adds cards to the deck.
         this.shuffle();//Shuffle the cards in the deck
-        this.draw();
     }
     reset(){
+        console.log("reset");
         const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-        const values = ['Ace', 2,3,4,5,6,7,8,9,10,'Jack','Queen','King'];
-        for (let _ in 3){
+        const values = ['A', '2','3','4','5','6','7','8','9','10','Jack','Queen','King'];
+        for (let i = 0;i<= 3; i++){
+            //console.log(i);
             for (let suit in suits){
+                //console.log(suit);
                 for (let value in values){
-                    Card = (value,suit);
+                    //console.log(value);
+                    let card = new Card(value,suit);
+                    //console.log(card);
                     this.deck.push(card);
                 }
             }
@@ -31,6 +35,7 @@ class Deck{
     }
     draw(){
         let card = this.deck[this.deck.length - 1];
+        console.log(this.deck[this.deck.length - 1]);
         this.deck.pop();
         card.display();
         return(card);
