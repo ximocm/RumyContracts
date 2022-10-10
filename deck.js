@@ -7,7 +7,7 @@ class Deck{
     reset(){
         console.log("reset");
         const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-        const values = ['A', '2','3','4','5','6','7','8','9','10','Jack','Queen','King'];
+        const values = ['A', '2','3','4','5','6','7','8','9','10','J','Q','K'];
         for (let i = 0;i<= 3; i++){
             //console.log(i);
             for (let suit in suits){
