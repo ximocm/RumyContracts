@@ -7,7 +7,7 @@ class Card{
         this.width = 35;
     }
     display(){
-        ctx.drawImage(ASpades, 265,275,50,64)
+        //<img value={this.value} isSpecial={this.isSpecial?1:0} index={this.index} className="card-deck" src={'deck-images/'+this.filename}/>
     }
     getNum(){return this.number}
     getSuit(){return this.suit}
