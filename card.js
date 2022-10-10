@@ -8,15 +8,15 @@ class Card{
 
         if (suit = 'Joker'){
             this.isSpecial = true;
-            this.filename = 'joker.png';
+            this.filename = 'joker';
         }
         else{
             this.isSpecial = false;
-            this.filename = number + suit + '.png';
+            this.filename = number + suit;
         }
     }
     display(){
-        <img value={this.value} isSpecial={this.isSpecial?1:0} index={this.index} className="card-deck" src={'images/'+this.filename}/>
+        ctx.drawImage(this.filename, 335,275,50,64);
     }
     getNum(){return this.number}
     getSuit(){return this.suit}

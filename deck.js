@@ -14,7 +14,7 @@ class Deck{
                 //console.log(suit);
                 for (let value in values){
                     //console.log(value);
-                    let card = new Card(value,suit);
+                    let card = new Card(value, suit);
                     //console.log(card);
                     this.deck.push(card);
                 }
@@ -35,6 +35,7 @@ class Deck{
     }
     draw(){
         let card = this.deck[this.deck.length - 1];
+        card.display();
         console.log(this.deck[this.deck.length - 1]);
         this.deck.pop();
         card.display();
