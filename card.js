@@ -5,11 +5,18 @@ class Card{
 
         this.height = 32;
         this.width = 35;
+
+        if (suit = 'Joker'){
+            this.isSpecial = true;
+            this.filename = 'joker';
+        }
+        else{
+            this.isSpecial = false;
+            this.filename = number + suit;
+        }
     }
-    display(card){
-        value = card.getNum();
-        suit = card.getSuit();
-        ctx.drawImage("deckimg", 10,10)
+    display(){
+        ctx.drawImage(this.filename, 335,275,50,64);
     }
     getNum(){return this.number}
     getSuit(){return this.suit}

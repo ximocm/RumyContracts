@@ -3,15 +3,20 @@ class Deck{
         this.deck = [];
         this.reset()//Adds cards to the deck.
         this.shuffle();//Shuffle the cards in the deck
-        this.draw();
     }
     reset(){
+        console.log("reset");
         const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-        const values = ['Ace', 2,3,4,5,6,7,8,9,10,'Jack','Queen','King'];
-        for (let _ in 3){
+        const values = ['A', '2','3','4','5','6','7','8','9','10','J','Q','K'];
+        for (let i = 0;i<= 3; i++){
+            //console.log(i);
             for (let suit in suits){
+                //console.log(suit);
                 for (let value in values){
-                    this.deck.push(card(value,suit));
+                    //console.log(value);
+                    let card = new Card(value, suit);
+                    //console.log(card);
+                    this.deck.push(card);
                 }
             }
         }
@@ -20,7 +25,7 @@ class Deck{
         }
     }
     shuffle(){
-        let size = this.deck.length();
+        let size = this.deck.length;
         for(var i; i < size; i++){
             let j = Math.floor(Math.random() * numberOfCards);
             let tmp = this.deck[i];
@@ -29,9 +34,11 @@ class Deck{
         }
     }
     draw(){
-        var carda = deck[this.deck.length -1];
+        let card = this.deck[this.deck.length - 1];
+        card.display();
+        console.log(this.deck[this.deck.length - 1]);
         this.deck.pop();
-        carda.display(carda);
-        return(carda);
+        card.display();
+        return(card);
     }
-}
+};
