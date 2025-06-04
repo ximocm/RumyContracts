@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 
 body{
-    margin:5;
+    margin: 5px;
     background:darkgray;
     overflow:hidden;
     text-align:center;
@@ -83,11 +83,11 @@ button {
     transform: translateY(10px);
 }
 
-.navigation ul li :not(.active):hover .text{
+.navigation ul li:not(.active):hover .text{
     opacity: 1;
     transform: translateY(20px);
 }
-.navigation ul li :not(.active):hover .icon{
+.navigation ul li:not(.active):hover .icon{
     color: var(--iconcol);
 }
 
