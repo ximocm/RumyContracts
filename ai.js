@@ -28,13 +28,13 @@ class AIPlayer {
         // Count cards by number for sets
         const byNumber = {};
         for (const c of this.hand) {
-            byNumber[c.number] = (byNumber[c.number] || 0) + 1;
+            byNumber[c.value] = (byNumber[c.value] || 0) + 1;
         }
 
         // Determine cards that are part of sets
         const meldCards = new Set();
         for (const c of this.hand) {
-            if (byNumber[c.number] >= 3) {
+            if (byNumber[c.value] >= 3) {
                 meldCards.add(c);
             }
         }
@@ -46,11 +46,11 @@ class AIPlayer {
             bySuit[c.suit].push(c);
         }
         for (const suit in bySuit) {
-            const cards = bySuit[suit].slice().sort((a,b)=>order.indexOf(a.number)-order.indexOf(b.number));
+            const cards = bySuit[suit].slice().sort((a,b)=>order.indexOf(a.value)-order.indexOf(b.value));
             let run = [cards[0]];
             for (let i=1;i<cards.length;i++) {
-                const prev = order.indexOf(cards[i-1].number);
-                const curr = order.indexOf(cards[i].number);
+                const prev = order.indexOf(cards[i-1].value);
+                const curr = order.indexOf(cards[i].value);
                 if (curr === prev + 1) {
                     run.push(cards[i]);
                 } else {
@@ -69,7 +69,7 @@ class AIPlayer {
         let discard = null;
         let maxValue = -1;
         for (const c of this.hand) {
-            const value = order.indexOf(c.number);
+            const value = order.indexOf(c.value);
             if (!meldCards.has(c) && value >= maxValue) {
                 maxValue = value;
                 discard = c;
