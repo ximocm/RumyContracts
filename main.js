@@ -29,7 +29,7 @@ function nextTurn() {
 }
 
 function updateUI() {
-    console.log('Discards:', discards.map(c => c.number + c.suit).join(','));
+    console.log('Discards:', discards.map(c => c.value + c.suit).join(','));
 }
 
 const drw = document.getElementById('draw');
