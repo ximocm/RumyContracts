@@ -101,3 +101,19 @@ button {
     width: 50px;
     height: 64px;
 }
+
+#info{
+    color: var(--white);
+    font-weight: 600;
+    margin: 10px;
+}
+
+#discard-pile {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+#discard-pile img {
+    width: 50px;
+    height: 64px;
+}
