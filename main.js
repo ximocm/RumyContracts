@@ -5,8 +5,6 @@ var imgdeck = document.getElementById("imgdeck");
 canvas.width = 600;
 canvas.height = 600;
 
-var turno = 1;
-var actplayer = 1;
 
 ctx.fillStyle = "green";
 ctx.fillRect(0,0,canvas.width,canvas.height);
@@ -41,6 +39,8 @@ drw.addEventListener("click", ()=>{
     img.src = card.image.src;
     img.width = card.width;
     img.height = card.height;
-    const hand = document.getElementById(`player${actplayer}-hand`);
+    const player = players[currentPlayer];
+    player.hand.push(card);
+    const hand = document.getElementById(`player${currentPlayer + 1}-hand`);
     hand.appendChild(img);
 });
