@@ -6,7 +6,7 @@ class Card{
         this.height = 32;
         this.width = 35;
 
-        if (suit = 'Joker'){
+        if (suit === 'Joker'){
             this.isSpecial = true;
             this.filename = 'joker';
         }
