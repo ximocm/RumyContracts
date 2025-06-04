@@ -91,7 +91,13 @@ button {
     color: var(--iconcol);
 }
 
-.scoreboard{
-    margin-top:20px;
-    color:white;
+.hand {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+.hand img {
+    width: 50px;
+    height: 64px;
 }
