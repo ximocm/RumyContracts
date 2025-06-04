@@ -90,3 +90,8 @@ button {
 .navigation ul li :not(.active):hover .icon{
     color: var(--iconcol);
 }
+
+.scoreboard{
+    margin-top:20px;
+    color:white;
+}
