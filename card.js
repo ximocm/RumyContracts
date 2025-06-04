@@ -1,3 +1,4 @@
+
 class Card {
     constructor(value, suit) {
         this.value = value;
@@ -23,4 +24,5 @@ class Card {
     getNum() { return this.value; }
     getSuit() { return this.suit; }
 };
+
 

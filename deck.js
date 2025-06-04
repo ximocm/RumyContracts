@@ -14,7 +14,6 @@ class Deck{
                 this.deck.push(new Card(value, suit));
             }
         }
-
         for (let i = 0; i < 2; i++) {
             this.deck.push(new Card('Joker', 'Joker'));
         }
