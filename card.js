@@ -1,24 +1,26 @@
-class Card{
-    constructor(number, suit){
-        this.number = number;
+class Card {
+    constructor(value, suit) {
+        this.value = value;
         this.suit = suit;
 
-        this.height = 32;
-        this.width = 35;
+        this.width = 50;
+        this.height = 64;
 
-        if (suit = 'Joker'){
-            this.isSpecial = true;
-            this.filename = 'joker';
+        if (suit === 'Joker') {
+            this.filename = 'Joker.png';
+        } else {
+            this.filename = `${value}${suit}.png`;
         }
-        else{
-            this.isSpecial = false;
-            this.filename = number + suit;
-        }
+
+        this.image = new Image();
+        this.image.src = `images/${this.filename}`;
     }
-    display(){
-        ctx.drawImage(this.filename, 335,275,50,64);
+
+    render(ctx, x, y) {
+        ctx.drawImage(this.image, x, y, this.width, this.height);
     }
-    getNum(){return this.number}
-    getSuit(){return this.suit}
+
+    getNum() { return this.value; }
+    getSuit() { return this.suit; }
 };
 
