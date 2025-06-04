@@ -34,8 +34,13 @@ function updateUI() {
 
 const drw = document.getElementById('draw');
 console.log(drw);
-drw.addEventListener("click", () => {
-    console.log('drw clicked');
-    players[0].hand.push(deck.draw());
-    nextTurn();
+drw.addEventListener("click", ()=>{
+    const card = deck.draw();
+    if (!card) return;
+    const img = document.createElement('img');
+    img.src = card.image.src;
+    img.width = card.width;
+    img.height = card.height;
+    const hand = document.getElementById(`player${actplayer}-hand`);
+    hand.appendChild(img);
 });
