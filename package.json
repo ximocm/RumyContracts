@@ -1,0 +1,14 @@
+{
+  "name": "rumy-contracts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rummy Contracts browser game",
+  "scripts": {
+    "start": "http-server . -p 5173 -c-1",
+    "dev": "http-server . -p 5173 -c-1",
+    "test:regression": "node regressionSuite.js"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

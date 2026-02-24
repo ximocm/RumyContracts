@@ -5,13 +5,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="myCanvas"></canvas>
-    <div id="info">
-        <p id="turn-info"></p>
-        <p id="scores"></p>
+    <div class="app-shell">
+        <header class="topbar">
+            <h1>Rummy Contracts</h1>
+            <p class="subtitle">Ximper &amp; Algario edition</p>
+        </header>
+
+        <div id="info" class="panel info-panel">
+            <p id="turn-info"></p>
+            <p id="scores"></p>
+        </div>
+
+        <div id="lobby-panel" class="panel lobby-panel">
+            <div class="lobby-row">
+                <input id="table-name" type="text" placeholder="Table name" value="Local Table" />
+                <button id="create-table">Create Table</button>
+                <select id="table-select"></select>
+            </div>
+            <div class="lobby-row">
+                <button id="join-human">Add Human</button>
+                <button id="join-bot">Add Bot</button>
+                <button id="start-table" class="btn-primary">Start Table</button>
+            </div>
+            <p id="lobby-status"></p>
+        </div>
+
+        <div class="table-area">
+            <div id="seat-top" class="seat seat-top">
+                <div class="seat-header"><ion-icon name="planet-outline"></ion-icon><span class="seat-name">Top</span></div>
+                <div class="seat-cards"></div>
+            </div>
+            <div id="seat-left" class="seat seat-left">
+                <div class="seat-header"><ion-icon name="compass-outline"></ion-icon><span class="seat-name">Left</span></div>
+                <div class="seat-cards"></div>
+            </div>
+            <div id="seat-right" class="seat seat-right">
+                <div class="seat-header"><ion-icon name="flash-outline"></ion-icon><span class="seat-name">Right</span></div>
+                <div class="seat-cards"></div>
+            </div>
+            <div id="seat-bottom" class="seat seat-bottom">
+                <div class="seat-header"><ion-icon name="star-outline"></ion-icon><span class="seat-name">Bottom</span></div>
+                <div class="seat-cards"></div>
+            </div>
+            <canvas id="myCanvas"></canvas>
+        </div>
     </div>
     <div id="player1-hand" class="hand"></div>
-    <div id="player2-hand" class="hand"></div>
     <div id="discard-pile" class="hand"></div>
     <div style="display:none;">
         <img id="imgdeck" src="images/back.png" width="25" height="32" />
@@ -37,6 +76,18 @@
                 </li>
                 <li class="list">
                     <a href="#">
+                        <button class="icon" id="sort-rank" title="Sort hand by rank">R</button>
+                        <span class="text">Sort Rank</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <button class="icon" id="sort-suit" title="Sort hand by suit">S</button>
+                        <span class="text">Sort Suit</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
                         <button class="icon" id="place">
                             <ion-icon name="arrow-down-outline"></ion-icon>
                         </button>
@@ -50,6 +101,9 @@
     <script src="card.js"></script>
     <script src="deck.js"></script>
     <script src="ai.js"></script>
+    <script src="gameCore.js"></script>
+    <script src="lobby.js"></script>
+    <script src="scoring.js"></script>
     <script src="main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

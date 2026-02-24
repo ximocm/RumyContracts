@@ -1,50 +1,242 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 
-body{
-    margin: 5px;
-    background:darkgray;
-    overflow:hidden;
-    text-align:center;
-}
-#myCanvas{
-    background:lightgray;
-}
 :root{
-    --background: #524A4E;
+    --bg-0: #0b1220;
+    --bg-1: #152238;
+    --panel: rgba(255,255,255,0.08);
+    --panel-border: rgba(255,255,255,0.18);
+    --text: #f4f7ff;
+    --muted: #b9c6e2;
+    --accent: #59d7b0;
+    --accent-2: #63a5ff;
+    --danger: #ff7c9c;
+    --background: #2a3349;
     --white: #FDEFF4;
-    --iconcol: #FF5C8D;
-    --indicatorcol: #FFC0D3;
+    --iconcol: #63a5ff;
+    --indicatorcol: #8ec5ff;
 }
-button {
 
+body{
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top right, rgba(99,165,255,0.15), transparent 45%),
+        radial-gradient(circle at bottom left, rgba(89,215,176,0.15), transparent 35%),
+        linear-gradient(140deg, var(--bg-0), var(--bg-1));
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:center;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+}
+
+.app-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 14px 8px;
+    position: relative;
+}
+
+.topbar {
+    margin-bottom: 10px;
+}
+
+.topbar h1 {
+    margin: 0;
+    letter-spacing: 0.04em;
+    font-size: 1.55rem;
+}
+
+.subtitle {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 30px rgba(5, 10, 20, 0.25);
+}
+
+.info-panel {
+    position: fixed;
+    left: 12px;
+    top: 16px;
+    width: 300px;
+    text-align: left;
+    z-index: 20;
+    margin: 0;
+    padding: 10px 12px;
+}
+
+.lobby-panel {
+    margin: 8px auto 10px;
+    padding: 10px;
+}
+
+#turn-info,
+#scores {
+    margin: 0 0 6px;
+    font-size: 0.88rem;
+    line-height: 1.35;
+}
+
+.lobby-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+#lobby-panel input,
+#lobby-panel select,
+#lobby-panel button {
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 10px;
+    color: var(--text);
+    background: rgba(255,255,255,0.08);
+    height: 36px;
+    padding: 0 10px;
+    font-size: 0.88rem;
+}
+
+#lobby-panel button {
+    width: auto;
+    min-width: 108px;
+    cursor: pointer;
+}
+
+#lobby-panel button.btn-primary {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    color: #0d1730;
+    border: none;
+    font-weight: 700;
+}
+
+#lobby-status {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+#myCanvas{
+    background: radial-gradient(circle at 20% 20%, #1f6b3f, #104627 60%, #0d3320);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+.table-area {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.table-area #myCanvas {
+    position: absolute;
+    inset: 0;
+}
+
+.seat {
+    position: absolute;
+    z-index: 2;
+    background: rgba(7, 19, 35, 0.68);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 10px;
+    padding: 4px 6px;
+    min-width: 108px;
+}
+
+.seat-current {
+    border-color: rgba(142,197,255,0.9);
+    box-shadow: 0 0 0 2px rgba(142,197,255,0.35), 0 0 18px rgba(142,197,255,0.35);
+}
+
+.seat-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: #d6e4ff;
+    font-size: 0.72rem;
+    margin-bottom: 4px;
+}
+
+.seat-cards {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}
+
+.seat-cards .card-back {
+    width: 22px;
+    height: 30px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.seat-top {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 6px;
+}
+
+.seat-bottom {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 6px;
+}
+
+.seat-left {
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.seat-right {
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+button {
     background: transparent;
-    /*border: none !important;*/
+    border: none;
     width: 50px;
     height: 70px;
 }
 .container{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 .navigation{
     position: relative;
-    width: 300px;
+    width: 520px;
     height: 80px;
-    background: var(--white) ;
+    background: rgba(255,255,255,0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 .navigation ul{
     display: flex;
-    width: 280px;
+    width: 500px;
 }
 
 .navigation ul li{
     position: relative;
     list-style: none;
-    width: 70px;
+    width: 100px;
     height: 70px;
     z-index: 1;
 }
@@ -71,7 +263,7 @@ button {
 .navigation ul li a .text
 {
     position: absolute;
-    background: var(--iconcol);
+    background: linear-gradient(120deg, var(--iconcol), #8e7dff);
     color: var(--white);
     padding: 2px 5px;
     border-radius: 8px;
@@ -95,15 +287,41 @@ button {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    gap: 5px;
+    gap: 6px;
+    flex-wrap: wrap;
 }
 .hand img {
     width: 50px;
     height: 64px;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#player1-hand img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.45);
+}
+
+#player1-hand img.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+#player1-hand img.drag-over {
+    outline: 2px dashed #8ec5ff;
+    outline-offset: 2px;
+}
+
+#player1-hand {
+    position: relative;
+    z-index: 5;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    min-height: 72px;
 }
 
 #info{
-    color: var(--white);
     font-weight: 600;
     margin: 10px;
 }
